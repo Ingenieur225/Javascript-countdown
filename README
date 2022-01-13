@@ -1,0 +1,12 @@
+countdown(time) {
+    setTimeout(() => {
+        let h = time.toString().substr(0, 2);
+        let m = time.toString().substr(3, 2);
+        let s = time.toString().substr(6, 2);
+
+        let hr = h * 3600;
+        let mn = m * 60;
+        this.join = new Date(((parseInt(hr) + parseInt(mn) + parseInt(s)) * 1000) - 1).toISOString().substr(11, 8);
+        this.countdown(this.join);
+    }, 1000);
+},
